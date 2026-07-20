@@ -1,68 +1,512 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KBC Quiz</title>
- </head>
- <style>
-      body{
-        margin: 0;
-        font-family: Arial;
-        background-color: #06064a;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .container{
-        text-align: center;
-        border: 3px solid yellow;
-        width: 40%;
-        border-radius: 30px;
-        padding: 40px;
-        box-shadow: 0 0 20px gold;
-        background-color: #11115e;
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KBC Quiz</title>
+    <style>
+     *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-      }
+body{
+    background: radial-gradient(circle,#182a73,#0b0b3b,#000);
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+}
+ 
 
-      button{
-        padding: 15px 40px;
-        border-radius: 20px;
-        font-size: 22px;
-        border: none;
-        font-weight: bold;
-        background-color: rgb(237, 237, 25);
-        cursor: pointer;
-        margin-bottom: 20px;
-       }
-      button:hover{
-        background-color: rgb(165, 165, 17);
-      }
+.start-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-      .kbc{
-        color: rgb(255, 215, 0);
-        font-size: 50px;
-        margin-top: 0px;
-        font-weight: bold;
-        text-shadow: 0 0 10px yellow;
+.start-box{
+    width:750px;
+    max-width:90%;
+    padding:60px;
+    border:4px solid gold;
+    border-radius:30px;
+    text-align:center;
+    background:#11184f;
+    box-shadow:0 0 30px gold;
+}
 
-      }
+.start-box h1{
+    color:gold;
+    font-size:65px;
+    margin-bottom:40px;
+    text-shadow:0 0 15px yellow;
+}
 
-    
- </style>
- <body>
-  <div class="container">
-     <p class="kbc">KBC</p>
-    <button onclick="startgame()">Start</button>
-  </div>
+.start-box button{
+    padding:15px 45px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    background:gold;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
 
-  <script>
-    function startgame(){
-      window.location.href = "game.html"; 
+.start-box button:hover{
+    background:orange;
+    transform:scale(1.1);
+}
+
+
+
+.logo{
+    text-align:center;
+    margin-top:20px;
+}
+
+.logo img{
+    width:250px;
+}
+
+.header{
+    background:#1c237e;
+    color:gold;
+    text-align:center;
+    padding:15px;
+    font-size:30px;
+    font-weight:bold;
+    border-top:2px solid gold;
+    border-bottom:2px solid gold;
+    letter-spacing:2px;
+}
+
+ 
+
+.lifelines{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:20px;
+}
+
+.lifelines button{
+    background:#002b80;
+    color:white;
+    border:2px solid gold;
+    padding:12px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.lifelines button:hover{
+    background:gold;
+    color:black;
+}
+
+ 
+
+.question-box{
+    width:65%;
+    margin:30px auto;
+    background:#121b63;
+    border:3px solid gold;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 20px rgba(255,215,0,.5);
+}
+
+#lblQuestionNo{
+    display:block;
+    text-align:center;
+    font-size:24px;
+    margin-bottom:25px;
+    color:white;
+}
+ 
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:15px 0;
+    padding:15px;
+    background:#1b237e;
+    border:2px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.option:hover{
+    background:gold;
+    color:black;
+    border-color:white;
+    transform:scale(1.02);
+}
+
+.option input{
+    transform:scale(1.4);
+    cursor:pointer;
+}
+
+.option label{
+    cursor:pointer;
+    width:100%;
+    font-size:20px;
+}
+
+ 
+
+.prizes{
+    position:absolute;
+    top:160px;
+    right:25px;
+    width:220px;
+    background:#10184e;
+    border:3px solid gold;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 0 15px gold;
+}
+
+.prizes ul{
+    padding:0;
+}
+
+.prizes li{
+    list-style:none;
+    padding:8px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    transition:.3s;
+}
+
+.prizes li:hover{
+    background:gold;
+    color:black;
+    font-weight:bold;
+}
+
+ 
+
+.submit-btn{
+    display:block;
+    margin:30px auto;
+    padding:15px 40px;
+    background:limegreen;
+    border:none;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:green;
+    color:white;
+    transform:scale(1.05);
+}
+
+ 
+.hide{
+    display:none;
+}
+
+ 
+
+@media(max-width:900px){
+
+    .question-box{
+        width:95%;
     }
-  </script>
- </body>
- </html>
 
-  
+    .prizes{
+        position:static;
+        width:95%;
+        margin:20px auto;
+    }
+
+    .header{
+        font-size:22px;
+    }
+
+    .start-box h1{
+        font-size:45px;
+    }
+
+    .option label{
+        font-size:18px;
+    }
+}
+    </style>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8321261883090494"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="startScreen" class="start-screen">
+      <div class="start-box">
+        <h1>KBC Quiz</h1>
+        <button onclick="startGame(); loadQuestion();">Start</button>
+      </div>
+    </div>
+
+    <div id="gameScreen" class="hide">
+
+       <div class="logo">
+        <img src="images/kbc.png" width="350px" />
+      </div>
+
+      <div class="header">Kaun Banega Crorepati</div>
+
+      <div class="lifelines">
+        <button>50:50</button>
+        <button>Audience Poll</button>
+        <button>Phone a Friend</button>
+        <button>Walk Away</button>
+      </div>
+
+      <div class="question-box">
+
+        <label id="lblQuestionNo"> 1. In the film 'Mr India', Mogambo was looking for a formula to enable </label>
+       
+
+        <div class="option">
+          <input type="radio"  name="option" id="rda" />
+          <label id="lbla" for="rda">Option A</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" name="option" id="rdb" />
+          <label id="lblb" for="rdb">Option B</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" name="option" id="rdc" />
+          <label id="lblc" for="rdc">Option C</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" name="option" id="rdd"/>
+          <label id="lbld" for="rdd" >Option D</label>
+        </div>
+
+      </div>
+
+      <div class="prizes">
+        <ul>
+          <li>₹1,000</li>
+          <li>₹2,000</li>
+          <li>₹3,000</li>
+          <li>₹5,000</li>
+          <li>₹10,000</li>
+          <li>₹20,000</li>
+          <li>₹40,000</li>
+          <li>₹80,000</li>
+          <li>₹1,60,000</li>
+          <li>₹3,20,000</li>
+          <li>₹6,40,000</li>
+          <li>₹12,50,000</li>
+          <li>₹25,00,000</li>
+          <li>₹50,00,000</li>
+          <li>₹1 Crore</li>
+        </ul>
+      </div>
+
+      <button class="submit-btn" onclick="f();">Check Answer</button>
+    </div>
+
+ <script>
+  let questionNo=0;
+  let currentQuestion=null;
+     const questions = [
+    {
+        question: "What is the capital of Uttar Pradesh?",
+        a: "Lucknow",
+        b: "Kanpur",
+        c: "Varanasi",
+        d: "Agra",
+        answer: 1
+    },
+    {
+        question: "What is the capital of Bihar?",
+        a: "Gaya",
+        b: "Patna",
+        c: "Bhagalpur",
+        d: "Muzaffarpur",
+        answer: 2
+    },
+    {
+        question: "What is the capital of India?",
+        a: "Mumbai",
+        b: "New Delhi",
+        c: "Kolkata",
+        d: "Chennai",
+        answer: 2
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        a: "Earth",
+        b: "Jupiter",
+        c: "Mars",
+        d: "Venus",
+        answer: 3
+    },
+    {
+        question: "Who is known as the Father of the Nation in India?",
+        a: "Jawaharlal Nehru",
+        b: "Bhagat Singh",
+        c: "Subhas Chandra Bose",
+        d: "Mahatma Gandhi",
+        answer: 4
+    },
+    {
+        question: "Which is the largest ocean in the world?",
+        a: "Atlantic Ocean",
+        b: "Indian Ocean",
+        c: "Pacific Ocean",
+        d: "Arctic Ocean",
+        answer: 3
+    },
+    {
+        question: "How many continents are there on Earth?",
+        a: "5",
+        b: "6",
+        c: "7",
+        d: "8",
+        answer: 3
+    },
+    {
+        question: "Which language is used for styling web pages?",
+        a: "HTML",
+        b: "CSS",
+        c: "Java",
+        d: "Python",
+        answer: 2
+    },
+    {
+        question: "Who invented the telephone?",
+        a: "Alexander Graham Bell",
+        b: "Thomas Edison",
+        c: "Nikola Tesla",
+        d: "James Watt",
+        answer: 1
+    },
+    {
+        question: "Which is the national animal of India?",
+        a: "Lion",
+        b: "Elephant",
+        c: "Leopard",
+        d: "Tiger",
+        answer: 4
+    },
+    {
+        question: "Which gas do plants absorb from the atmosphere?",
+        a: "Oxygen",
+        b: "Nitrogen",
+        c: "Carbon Dioxide",
+        d: "Hydrogen",
+        answer: 3
+    },
+    {
+        question: "Which is the smallest prime number?",
+        a: "1",
+        b: "2",
+        c: "3",
+        d: "5",
+        answer: 2
+    },
+    {
+        question: "Who wrote the Indian National Anthem?",
+        a: "Premchand",
+        b: "Bankim Chandra Chatterjee",
+        c: "Rabindranath Tagore",
+        d: "Sarojini Naidu",
+        answer: 3
+    },
+    {
+        question: "What is the full form of CPU?",
+        a: "Central Process Unit",
+        b: "Central Processing Unit",
+        c: "Computer Processing Unit",
+        d: "Central Program Unit",
+        answer: 2
+    },
+    {
+        question: "Which company developed Java?",
+        a: "Microsoft",
+        b: "Google",
+        c: "Apple",
+        d: "Sun Microsystems",
+        answer: 4
+    }
+];
+
+
+
+      let questionno = 1;
+      const rda = document.querySelector("#rda");
+      const rdb = document.querySelector("#rdb");
+      const rdc = document.querySelector("#rdc");
+      const rdd = document.querySelector("#rdd");
+      const rde = document.querySelector("#rde");
+
+      const lblqno = document.querySelector("#lblQuestionNo");
+
+      const lbla = document.querySelector("#lbla");
+      const lblb = document.querySelector("#lblb");
+      const lblc = document.querySelector("#lblc");
+      const lbld = document.querySelector("#lbld");
+
+      function f() {
+        let givenanswer = getSelectedAnswer();
+        
+          if(givenanswer == 0){
+            alert("Please Select answer");
+             return;
+          }
+          console.log(givenanswer);
+          
+          //  alert(currentQuestion.answer);
+            if(currentQuestion.answer == givenanswer){
+              alert("Correct answer");
+              questionNo++;
+              loadQuestion();
+            }else{
+              alert("Wrong answer");
+            }
+       }
+
+       function loadQuestion(){
+          currentQuestion=questions[questionNo];
+           lblqno.textContent=currentQuestion.question;
+           lbla.textContent=currentQuestion.a;
+           lblb.textContent=currentQuestion.b;
+           lblc.textContent=currentQuestion.c;
+           lbld.textContent=currentQuestion.d;        
+       }
+
+      function startGame() {
+        document.querySelector("#startScreen").classList.add("hide");
+        document.querySelector("#gameScreen").classList.remove("hide");
+      }
+      function getSelectedAnswer() {
+        if (rda.checked) return 1;
+        if (rdb.checked) return 2;
+        if (rdc.checked) return 3;
+        if (rdd.checked) return 4;
+        return 0;
+      }
+
+       
+    </script>
+  </body>
+</html>
