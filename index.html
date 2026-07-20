@@ -276,25 +276,25 @@ body{
 
       <div class="question-box">
 
-        <label id="lblQuestionNo"> 1. In the film 'Mr India', Mogambo was looking for a formula to enable </label>
+        <label id="lblQuestionNo"></label>
        
 
-        <div class="option">
+        <div class="option" onclick="document.querySelector('#rda').checked=true">
           <input type="radio"  name="option" id="rda" />
           <label id="lbla" for="rda">Option A</label>
         </div>
 
-        <div class="option">
+        <div class="option" onclick="document.querySelector('#rdb').checked=true">
           <input type="radio" name="option" id="rdb" />
           <label id="lblb" for="rdb">Option B</label>
         </div>
 
-        <div class="option">
+        <div class="option" onclick="document.querySelector('#rdc').checked=true">
           <input type="radio" name="option" id="rdc" />
           <label id="lblc" for="rdc">Option C</label>
         </div>
 
-        <div class="option">
+        <div class="option" onclick="document.querySelector('#rdd').checked=true">
           <input type="radio" name="option" id="rdd"/>
           <label id="lbld" for="rdd" >Option D</label>
         </div>
@@ -479,19 +479,32 @@ body{
             if(currentQuestion.answer == givenanswer){
               alert("Correct answer");
               questionNo++;
+              if(questionNo >= questions.length){
+                alert("Congratulations! You completed the quiz!");
+                document.querySelector("#gameScreen").classList.add("hide");
+                document.querySelector("#startScreen").classList.remove("hide");
+                questionNo = 0;
+                return;
+              }
               loadQuestion();
             }else{
               alert("Wrong answer");
             }
+             
        }
 
        function loadQuestion(){
           currentQuestion=questions[questionNo];
-           lblqno.textContent=currentQuestion.question;
+           lblqno.textContent= "Q" + (questionNo + 1) + ". " + currentQuestion.question;
            lbla.textContent=currentQuestion.a;
            lblb.textContent=currentQuestion.b;
            lblc.textContent=currentQuestion.c;
-           lbld.textContent=currentQuestion.d;        
+           lbld.textContent=currentQuestion.d;
+           
+           rda.checked=false;
+           rdb.checked=false;
+           rdc.checked=false;
+           rdd.checked=false;
        }
 
       function startGame() {
