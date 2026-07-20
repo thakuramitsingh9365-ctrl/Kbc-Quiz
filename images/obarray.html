@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Objects</title>
+</head>
+<body>
+    Book Name<input type="text" id="txtBookName"/>
+    <br/>
+    Subject<input type="text" id="txtSubject"/>
+    <br/>
+    Discounted Price<input type="text" id="txtDiscountedPrice"/>
+    <br/>
+    <input type="button" onclick="next()" value=">>">
+</body>
+<script>
+    var book=[{
+    name: "Basic C",
+    subject: "C",
+    price: 50,
+    dicount: 10,
+    discountedPrice: function(){return (100.0-this.dicount)* this.price/100;}
+    },
+    {
+        name: "Basic C++",
+        subject: "C++",
+        price: 70,
+        discountedPrice : function() { return this.price-100;}
+    }
+    ];
+    var i=0;
+    var n=book.length;
+    function next(){
+        document.getElementById("txtBookName").value=book[i].name;
+        document.getElementById("txtSubject").value=book[i]['subject'];
+        document.getElementById("txtDiscountedPrice").value=book[i].discountedPrice();
+        if(i<n-1)
+        i++;
+    }
+    next();
+</script>
+</html>

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{ 
+font-family: "Poppins",Arial, Helvetica, sans-serif;    
+background-color: #f9f9f9;
+color: #333;
+margin: 20px;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.paragraph{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.small-text{
+    font-size: 12px;
+}
+
+.large-text{
+    font-size: 24px;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
+.italic-text{
+    font-style: italic;
+}
+
+.underline-text{
+    text-decoration: underline;
+}
+
+.line-through-text{
+    text-decoration: line-through;
+}
+
+.uppercase-text{
+    text-transform: uppercase;
+}
+
+.letter-spacing{
+    letter-spacing: 3px;
+}
+
+.word-spacing{
+    word-spacing: 10px;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.shadow-text{
+    font-size: 20px;
+    text-shadow: 2px 2px 5px rgba(11, 11, 11, 0.3);
+}
+

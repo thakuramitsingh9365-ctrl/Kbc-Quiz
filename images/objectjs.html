@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Script Objects</title>
+    <script>
+      var book = {
+        name: "Basic C",
+        subject: "C",
+        price: 50,
+      };
+      function f() {
+        document.getElementById("txtBookName").value = book.name;
+        document.getElementById("txtSubject").value = book["subject"];
+        document.getElementById("txtPrice").value = book.price;
+      }
+      function f1() {
+        book.name = document.getElementById("txtBookName").value;
+        book["subject"] = document.getElementById("txtSubject").value;
+        book.price = document.getElementById("txtPrice").value;
+      }
+    </script>
+  </head>
+  <body>
+    Book Name<input type="text" id="txtBookName" />
+    <br />
+    Price<input type="text" id="txtPrice" />
+    <br />
+    <input type="button" onclick="f()" value="Find" />
+    <input type="button" onclick="f1()" value="Set" />
+  </body>
+</html>

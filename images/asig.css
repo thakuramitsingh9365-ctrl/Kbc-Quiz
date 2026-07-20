@@ -1,0 +1,38 @@
+/* static :- by default position */
+
+/* .static-box{
+    height: 200px;
+    width: 200px;
+    border: 2px solid blue;
+    padding: 10px;
+} */
+
+/* .relative-box{
+    height: 200px;
+    width: 200px;
+    border: 2px solid blue;
+    padding: 10px;
+    top: 30px;
+    left: 50px;
+} */
+
+/* .parent{
+    height: 200px;
+    width: 200px;
+    border: 2px solid blue;
+}
+
+.absolute-box{
+    border: 2px solid blue;
+    padding: 10px;
+    bottom: 10px;
+    left: 50px;
+} */
+
+.fixed-header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: orange;
+    padding: 10px;
+}

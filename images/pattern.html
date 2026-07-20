@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // for(var i=1;i<=5;i++){
+        //     for(var j=1;j<=i;j++){
+        //         document.write(j+" ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // for(var a=1;a<=5;a++){
+        //     for(var b=1;b<=a;b++){
+        //        document.write(a +" ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // for(var i=5;i>=1;i--){
+        //     for(j=1;j<=i;j++){
+        //         document.write(i);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        //  for(var a=5;a>=1;a--){
+        //     for(var b=a;b>=1;b--){
+        //         document.write(b+" ");
+        //     }
+        //     document.write("<br>");
+        //  }
+
+        //Array in Js
+
+        // var arr=[10,20,30,40,50];
+
+        // for(var i=0;i<=4;i++){
+        // document.write(arr[i] +"<br>");
+        // }
+
+        // var arr=new Array(3);
+        // arr[0]=10;
+        // arr[1]="Harry";
+        // arr[3]=true;
+
+        // for(var i=0;i<3;i++){
+        //     arr[i]=prompt("Enter the Value : ");
+        // }
+        // document.write("<ul>");
+        //     for(var i=0;i<3;i++){
+        //         document.write("<li>" + arr[i] + "</li>");
+        //     }
+        //     document.write("</ul>");
+
+            // var arr=new Array(3);
+
+            // for(var i=0;i<3;i++){
+            //     arr[i]=prompt("Enter the Value..");
+            // }
+
+            // document.write("<ul>")
+            // for(var i=0;i<3;i++){
+            //     document.write("<li>" + arr[i] +" " + "</li>");
+            // }
+            // document.write("</ul>")
+
+            //Multi Dimensional Array
+
+            var arr=[
+                ["Harry",18,"Male","B.Com"],
+                ["Sunny",19,"Male","BCA"],
+                ["Sarah",18,"Male","BCA"],
+                ["Tom",17,"Male","B.A."]
+            ];
+
+            //document.write(arr[2][0]);
+            // document.write("<table border='1px' cellspacing='0'>");
+            // for(var i=0;i<4;i++){
+            //     document.write("<tr>");
+            //     for(var j=0;j<4;j++){
+            //      document.write("<td>" + arr[i][j] + "</td>");
+            //     }
+            //     document.write("</tr>");
+            //  }
+            //   document.write("</table>");
+
+            // var a=["Harry",18,"Male","BCA"];
+            // document.write(a + "<br>");
+            // a[0]="Sunny";
+            // document.write(a + "<br>");
+            // delete a[1];
+            // document.write(a + "<br>");
+
+            // document.write(a[1] + "<br>");
+
+            // var a=["Sanjay","Aman","Rehman"];
+            // var b=["Rahul","Karan"];
+            // var c=a.concat(b);
+            // document.write(c + "<br><br>"); 
+
+            // var d=c.join(" ");
+            // document.write(d);
+
+            //slice
+            // var a=["Sanjay","Aman","Rehman","Rahul","Karan"];
+
+            // document.write(a + "<br><br>");
+
+            // var b=a.slice(1,4);
+            // document.write(b + "<br><br>");
+
+            // var a=["Sanjay","Aman","Rehman","Rahul"];
+            // document.write(a + "<br><br>");
+
+            // a.splice(2,0,"Neha","Karan");
+            // document.write(a + "<br><br>");
+
+            //isArray()
+
+            // var a=["Sanjay","Aman","Rehman"];
+            // var a=10;
+            // var a="Amit";
+            // document.write(a + "<br><br>");
+
+            // var b=Array.isArray(a);
+            // document.write(b + "<br><br>");
+
+            // if(Array.isArray(a)){
+            //     document.write("This is an Array");
+            // } else{
+            //     document.write("This is not an Array");
+            // }
+
+            // var a=["Sanjay","Aman","Rehman","Aman","Rahul"];
+            // document.write(a + "<br><br>");
+
+            // var b=a.indexOf("Aman",2);
+            // document.write(b + "<br><br>");
+
+            // var c=a.lastIndexOf("Aman",2);
+            // document.write(c + "<br><br>");
+
+            //Include method
+
+            // var a=["Sanjay","Aman","Rehman","Rahul"];
+            // document.write(a + "<br><br>");
+
+            // var b=a.includes("Rahul");
+            // document.write(b + "<br><br>");
+
+            //Some function
+            // var ages=[10,13,18,20];
+            // document.write(ages + "<br><br>");
+
+            // var b=ages.some(checkAdult);
+            // document.write(b + "<br><br>");
+
+            // function checkAdult(age){
+            //     return age >= 18;
+            // }
+
+            //Ever funcction
+            // var ages=[10,13,15,2];
+            // document.write(ages + "<br><br>");
+
+            // var b=ages.every(checkAdult);
+            // document.write(b + "<br><br>");
+
+            // function checkAdult(age){
+            //    return age >= 18;
+            // }
+
+            // var ages=[10,23,19,20];
+            // document.write(ages + "<br><br>");
+
+            // var b=ages.find(checkAdult);
+            // document.write(b + "<br><br>");
+
+            // function checkAdult(age){
+            //     return age >= 18;
+            // }
+
+            // var ages=[10,23,19,20];
+            // document.write(ages + "<br><br>");
+
+            // var b=ages.findIndex(checkAdult);
+            // document.write(b + "<br><br>");
+
+            // function checkAdult(age){
+            //     return age >= 18;
+            // }
+
+            // var ages=[10,12,19,20];
+            // document.write(ages + "<br><br>");
+
+            // var b=ages.filter(checkAdult);
+            // document.write(b + "<br><br>");
+
+            // function checkAdult(age){
+            //     return age >= 18;
+            // }
+
+            //toString() method
+
+            // var a=["Rahul","Karan","Aman","Neha"];
+            //  a.toString();
+            //  a.fill("Ram");
+            // document.write(a);
+
+            //for each loop
+
+            // var a=["Sanjay","Aman","Karan"];
+            // a.forEach(function(Value, index){
+            //     document.write(index + " : " +Value + "<br>");
+            // });
+
+            // var arr=["Amit","Anurag","Anuj"];
+            // arr.forEach(function(i){
+            //     document.write(i + "<br>");
+            // });
+
+            //Object in Js
+            // var a={
+            //     fname : 'Amit',
+            //     lname : 'Singh',
+            //     age : 20,
+            //     email : 'AmitSingh6194@gmail.com',
+            //     favMovies : ['Dhoom','Sholay','Hum'],
+            //     salary : function(){
+            //         return 25000;
+            //     },
+
+            //     fullname : function(){
+            //         return this.fname + " " + this.lname;
+            //     }
+            // }
+
+            // console.log(a);
+            // document.write(a.fname);
+            // document.write(a.favMovies);
+
+            // document.write(a.fullname());
+
+            // var person = new Object();
+
+            // person.firstName = 'Ram Singh';
+            // person.lastName = 'Singh';
+            // person.age=25;
+
+            // document.write(person.firstName);
+
+            //Array of Objects
+           
+            // var student = [
+            //     {name : 'Ram', age : 15},
+            //     {name : 'Amit', age : 20},
+            //     {name : 'Anurag', age : 19},
+            // ];
+
+            // console.log(student);
+
+            // for(var i=0;i<student.length;i++){
+            //     document.write(student[i].name +" " +student[i].age + "<br>");
+            // }
+
+            // const a = {
+            //     name : "Ram",
+            //     age : 25
+            // };
+
+            // a.name = "Yahoo Baba"
+            // console.log(a);
+
+            // for in loop js
+            // var a={
+            //     firstName : "Ram",
+            //     lastName : "Kumar",
+            //     age : 18,
+            //     country : "India"
+            // };
+
+            // for(var i in a){
+            //     document.write(i + " : " + a[i] +"<br>");
+            // }
+
+            // var arr=[11,4,9,16];
+
+            var arr=[
+                {fname : "Yahoo" , lname : "Baba"},
+                {fname : "Rahul" , lname : "Kumar"},
+                {fname : "Karan" , lname : "Sharma"},
+            ]; 
+            var b=arr.map(test);
+            document.write(b);
+
+            function test(x){
+                // return x * 10;
+
+                return x.fname + " " + x.lname;
+            }
+
+      </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBC Quiz</title>
+ </head>
+ <style>
+      body{
+        margin: 0;
+        font-family: Arial;
+        background-color: #06064a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container{
+        text-align: center;
+        border: 3px solid yellow;
+        width: 40%;
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 0 20px gold;
+        background-color: #11115e;
+
+      }
+
+      button{
+        padding: 15px 40px;
+        border-radius: 20px;
+        font-size: 22px;
+        border: none;
+        font-weight: bold;
+        background-color: rgb(237, 237, 25);
+        cursor: pointer;
+        margin-bottom: 20px;
+       }
+      button:hover{
+        background-color: rgb(165, 165, 17);
+      }
+
+      .kbc{
+        color: rgb(255, 215, 0);
+        font-size: 50px;
+        margin-top: 0px;
+        font-weight: bold;
+        text-shadow: 0 0 10px yellow;
+
+      }
+
+    
+ </style>
+ <body>
+  <div class="container">
+     <p class="kbc">KBC</p>
+    <button onclick="startgame()">Start</button>
+  </div>
+
+  <script>
+    function startgame(){
+      window.location.href = "game.html"; 
+    }
+  </script>
+ </body>
+ </html>
+
+  

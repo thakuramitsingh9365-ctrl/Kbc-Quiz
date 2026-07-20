@@ -1,0 +1,54 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBC Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+ 
+      <div class="container">
+
+        <div class="top">
+          <h1>KBC Quiz</h1>
+        </div>
+
+        <div class="liflines">
+          <button class="fiftyBtn">50:50</button>
+          <button class="pollBtn">Audience Poll</button>
+          <button class="skipBtn">Skip</button>
+        </div>
+
+         <div class="game">
+           
+          <div class="ladder">
+            <h2>Prize Ladder</h2>
+            <ol id="ladder"></ol>
+          </div>
+
+          <div class="stage">
+
+            <div class="meta">
+               <span id="timer">Time: 30</span>
+               <span id="score">Score: 0</span>
+            </div>
+
+            <h2 id="question">Question will appear here</h2>
+
+            <div id="options"></div>
+
+            <p id="message"></p>
+
+            <button id="nextBtn">Next Question</button>
+            <button id="restartBtn">Restart</button>
+          </div>
+         </div>
+      </div>
+     </main>
+
+    <script src="app.js"></script>
+
+  </body>
+</html>

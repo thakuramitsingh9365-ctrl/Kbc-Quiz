@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+          <div id="divStart">
+              <button onclick="doHide(divstart);doShow(divgame)">Start</button>
+
+          </div>
+          <div id="divGame" class="hide">
+              <h1>Game</h1>
+              <label id="lblTimer"></label>
+          </div>
+    </div>
+
+    <script>
+        const divstart=document.querySelector("#divStart");
+        const divgame=document.querySelector("#divGame");
+        const lbltimer=document.querySelector("#lblTimer");
+
+        let counter=30;
+        let timerId=null;
+        function startTimer(){
+            counter=30;
+            lbltimer.textContent=counter;
+
+            timerId=setInterval(function(){
+                counter--;
+                lbltimer.textContent=counter;
+
+                if(counter === 0){
+                    clearInterval(timerId);
+                    alert("Time up!");
+                }
+            }, 1000);
+        }
+
+        function doHide(element){
+            element.classList.add("hide");
+
+        }
+        function doShow(element){
+            element.classList.remove("hide");
+            startTimer();
+            
+        }
+    </script>
+</body>
+</html>

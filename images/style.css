@@ -1,0 +1,157 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+ body{
+    font-family:Arial, sans-serif;
+    background:#071a45;
+    color:white;
+}
+
+ .container{
+    width:100%;
+    margin:30px auto;
+}
+
+ .top h1{
+    color:#FFD700;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+ .liflines{
+    margin-bottom:20px;
+}
+
+.liflines button{
+    padding:10px 15px;
+    margin-right: 5px;
+    background:gold;
+    color:black;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+ .game{
+    display:flex;
+    gap:20px;
+}
+
+ .ladder{
+    width:250px;
+    background:#263454;
+    padding:20px;
+    border-radius:20px;
+}
+
+.ladder h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:white;
+}
+
+#ladder{
+    padding-left:20px;
+}
+
+#ladder li{
+    margin-bottom:10px;
+}
+
+ .stage{
+    flex:1;
+    background:#263454;
+    padding:30px;
+    border-radius:20px;
+}
+
+ .meta{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+ #question{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+ #options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+#options button{
+    padding:15px;
+    font-size:18px;
+    background:#0d47a1;
+    color:white;
+    border:2px solid gold;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#options button:hover{
+    background:gold;
+    color:black;
+}
+
+ #message{
+    margin-top:25px;
+    text-align:center;
+    font-size:22px;
+    color:gold;
+}
+
+ #nextBtn,
+#restartBtn{
+    margin-top:25px;
+    padding:12px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+}
+
+#nextBtn{
+    background:green;
+}
+
+#restartBtn{
+    background:red;
+    margin-left:10px;
+}
+
+@media(max-width:768px){
+
+.game{
+    flex-direction:column;
+}
+
+.ladder{
+    width:100%;
+}
+
+#options{
+    grid-template-columns:1fr;
+}
+
+.meta{
+    flex-direction:column;
+    gap:10px;
+}
+
+#question{
+    font-size:24px;
+}
+
+}
