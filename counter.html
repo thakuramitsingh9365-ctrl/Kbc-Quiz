@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <button id="bttnup" onclick="up()">Up Counter</button><br />
+    <button id="bttndown" onclick="down()">Down Counter</button>
+    <script>
+      let nup = 0;
+      let ndown = 10;
+      let uptimer = null;
+      let downtimer = null;
+
+      function up() {
+        clearInterval(uptimer);  
+        uptimer = setInterval(countup, 1000);
+      }
+
+      function down() {
+        clearInterval(downtimer); 
+        downtimer = setInterval(countdown, 1000);
+      }
+
+      function countup() {
+        nup++;
+        if (nup >= 10) {
+          clearInterval(uptimer);
+        }
+        document.querySelector("#bttnup").textContent = nup;
+      }
+
+      function countdown() {
+        ndown--;
+        if (ndown <= 0) {
+          clearInterval(downtimer);
+        }
+        document.querySelector("#bttndown").textContent = ndown;
+      }
+    </script>
+  </body>
+</html>

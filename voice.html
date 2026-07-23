@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <button id="speakBtn" onclick="f(); events();">Speak</button>
+
+    <textarea id="speechText">Welcome to programmer's Picnic.</textarea
+    ><br /><br />
+    <button onclick="pause()">Pause</button>
+    <button onclick="resume()">Resume</button>
+    <button onclick="cancel()">Stop</button>
+    <label id="statusBox"></label>
+    <!-- <button id="readBtn" onclick="sound()">Read aloud</button>  -->
+
+    <script>
+      let textBox = document.getElementById("speechText");
+      let readButton = document.getElementById("readBtn");
+      let statusBox = document.querySelector("#statusBox");
+
+      function f() {
+        let message = new SpeechSynthesisUtterance(
+          document.querySelector("#speechText").value,
+        );
+
+        message.lang = "en-IN";
+        message.rate = 1;
+        message.pitch = 1;
+        message.volume = 1;
+        window.speechSynthesis.speak(message);
+      }
+
+      function pause() {
+        // Pause the current speech
+        window.speechSynthesis.pause();
+      }
+
+      function resume() {
+        // Continue paused speech
+        window.speechSynthesis.resume();
+      }
+
+      function cancel() {
+        // Remove all speech from the queue
+        window.speechSynthesis.cancel();
+      }
+
+      function events() {
+        const message = new SpeechSynthesisUtterance(
+          "Events make speech interactive.",
+        );
+
+        message.onstart = function () {
+          statusBox.textContent = "Speaking...";
+        };
+
+        message.onend = function () {
+          statusBox.textContent = "Finished.";
+        };
+
+        message.onerror = function (event) {
+          statusBox.textContent = "Problem: " + event.error;
+        };
+
+        window.speechSynthesis.speak(message);
+      }
+
+      function voiceBox() {
+        const voiceBox = document.getElementById("voiceBox");
+        let voices = [];
+
+        function loadVoices() {
+          voices = window.speechSynthesis.getVoices();
+          voiceBox.innerHTML = "";
+
+          voices.forEach(function (voice, index) {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = voice.name + " (" + voice.lang + ")";
+            voiceBox.appendChild(option);
+          });
+        }
+
+        loadVoices();
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+      }
+    </script>
+  </body>
+</html>
